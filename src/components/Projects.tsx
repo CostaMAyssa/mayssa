@@ -1,30 +1,20 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
+
+// Importando a imagem do GranaNoZap
+import granaNoZapImagem from '../assets/sistemas/Captura de Tela 2025-05-21 às 17.22.43.png';
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "IA Assistent",
-      description: "Assistente virtual com inteligência artificial para automação de atendimento",
-      tags: ["Flutter", "GPT", "Firebase"],
-      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=500&auto=format&fit=crop"
-    },
-    {
-      id: 2,
-      title: "AutoFlow",
-      description: "Plataforma de automação de fluxos de trabalho com integração n8n",
-      tags: ["Node.js", "n8n", "React"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop"
-    },
-    {
-      id: 3,
-      title: "MobilePay",
-      description: "Solução de pagamentos mobile com tecnologia blockchain",
-      tags: ["Flutter", "Firebase", "Blockchain"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=500&auto=format&fit=crop"
-    },
+      title: "GranaNoZap",
+      description: "Controle financeiro automatizado via WhatsApp, com dashboard inteligente para organizar sua vida financeira com facilidade",
+      tags: ["Automação", "WhatsApp", "Finanças"],
+      image: granaNoZapImagem,
+      link: "https://grananozap.com.br/"
+    }
   ];
 
   return (
@@ -32,19 +22,40 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projetos em Destaque</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
           {projects.map((project) => (
             <Card key={project.id} className="bg-secondary border border-golden/30 overflow-hidden hover:shadow-[0_0_15px_rgba(199,161,73,0.3)] transition-all duration-300">
-              <div className="h-48 overflow-hidden">
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block h-64 overflow-hidden relative"
+              >
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
                 />
-              </div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white flex items-center gap-2 font-medium">
+                    <ExternalLink size={18} />
+                    <span>Visitar site</span>
+                  </div>
+                </div>
+              </a>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {project.title}
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block ml-2 text-golden hover:text-golden/80"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                </h3>
                 <p className="text-grayText mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
@@ -60,15 +71,6 @@ const Projects = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href="#" 
-            className="inline-block px-6 py-3 border border-golden rounded-full hover:bg-golden hover:text-black transition-colors"
-          >
-            Ver todos os projetos
-          </a>
         </div>
       </div>
     </section>
