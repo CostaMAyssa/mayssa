@@ -29,7 +29,7 @@ const chapters: TimelineChapter[] = [
   {
     id: 2,
     title: "Empreendendo com minha mãe — Trenzinho Joy",
-    content: "Antes mesmo de entender o que era "empreendedorismo", eu já vivia ele na prática. Junto com minha mãe, fundamos a Escola Trenzinho Joy, um espaço criado com carinho para acolher, educar e transformar a infância de outras crianças — assim como a minha havia sido. Essa experiência me deu algo raro: visão de negócio, senso de responsabilidade e a certeza de que empreender é, antes de tudo, um ato de coragem.",
+    content: "Antes mesmo de entender o que era \"empreendedorismo\", eu já vivia ele na prática. Junto com minha mãe, fundamos a Escola Trenzinho Joy, um espaço criado com carinho para acolher, educar e transformar a infância de outras crianças — assim como a minha havia sido. Essa experiência me deu algo raro: visão de negócio, senso de responsabilidade e a certeza de que empreender é, antes de tudo, um ato de coragem.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
   },
   {
