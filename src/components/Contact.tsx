@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PhoneCall } from 'lucide-react';
@@ -24,8 +23,8 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-medium text-golden">Email</h3>
-                  <p>contato@mayssacosta.com</p>
+                  <h3 className="font-medium text-golden">E-mail</h3>
+                  <p>mayssaprog16@outlook.com</p>
                 </div>
               </div>
               
@@ -38,7 +37,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-golden">WhatsApp</h3>
-                  <p>+55 (11) 99999-9999</p>
+                  <p>+55 64 8114-0676</p>
                 </div>
               </div>
               
@@ -50,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-golden">Localização</h3>
-                  <p>São Paulo, SP - Brasil</p>
+                  <p>Goiânia, GO - Brasil</p>
                 </div>
               </div>
             </div>
@@ -99,7 +98,7 @@ const Contact = () => {
           
           <div className="flex items-center justify-center">
             <a 
-              href="https://wa.me/5511999999999" 
+              href="https://wa.me/5564811406760" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="w-full max-w-md"

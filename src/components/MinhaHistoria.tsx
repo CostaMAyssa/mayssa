@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -169,9 +168,15 @@ const MinhaHistoria = () => {
         <div className="mt-16 text-center">
           <p className="text-grayText mb-8">Gostou da minha jornada?</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-golden hover:bg-golden/90 text-black font-medium">
-              Fale comigo
-            </Button>
+            <a 
+              href="https://wa.me/5564811406760" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-golden hover:bg-golden/90 text-black font-medium">
+                Fale comigo
+              </Button>
+            </a>
             <Button variant="outline" className="border-golden text-golden hover:bg-golden/10">
               Ver projetos
             </Button>

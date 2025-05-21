@@ -1,6 +1,13 @@
-
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+// Importando as imagens locais
+import momentos1 from '../assets/momentos_e_eventos/momentos1.jpeg';
+import momentos2 from '../assets/momentos_e_eventos/momentos2.jpeg';
+import momentos3 from '../assets/momentos_e_eventos/momentos3.jpeg';
+import momentos4 from '../assets/momentos_e_eventos/momentos4.jpeg';
+import momentos5 from '../assets/momentos_e_eventos/momentos5.jpeg';
+import momentos6 from '../assets/momentos_e_eventos/momentos6.jpeg';
 
 const Events = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
@@ -8,28 +15,33 @@ const Events = () => {
   const events = [
     {
       id: 1,
-      title: "Campus Party 2024",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop"
+      title: "Palestra Campus Party",
+      image: momentos1
     },
     {
       id: 2,
-      title: "Conecta CEIA 2023",
-      image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=500&auto=format&fit=crop"
+      title: "Primeiro Lugar na Ideathon Coled",
+      image: momentos2
     },
     {
       id: 3,
-      title: "Hackathon Blockchain",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500&auto=format&fit=crop"
+      title: "Segundo Lugar no Nasa Apps Space Gyn",
+      image: momentos3
     },
     {
       id: 4,
-      title: "Palestra Flutter Summit",
-      image: "https://images.unsplash.com/photo-1475721027785-f74ec9c409d6?q=80&w=500&auto=format&fit=crop"
+      title: "Terceiro lugar no Hackaton hub Goiás",
+      image: momentos4
     },
     {
       id: 5,
-      title: "Workshop AI Innovation",
-      image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=500&auto=format&fit=crop"
+      title: "Congresso Nacional de Sistemas",
+      image: momentos5
+    },
+    {
+      id: 6,
+      title: "Parceria com a Cosmos Terra preta",
+      image: momentos6
     }
   ];
 
@@ -92,7 +104,9 @@ const Events = () => {
         
         <div className="mt-12 text-center">
           <a 
-            href="#contact" 
+            href="https://wa.me/5564811406760" 
+            target="_blank" 
+            rel="noopener noreferrer" 
             className="inline-block px-6 py-3 border border-golden rounded-full hover:bg-golden hover:text-black transition-colors"
           >
             Quero convidar a Mayssa
