@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { PhoneCall } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -98,52 +97,19 @@ const Contact = () => {
             </div>
           </div>
           
-          <form className="bg-matte p-6 rounded-lg golden-border">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Nome</label>
-                <Input 
-                  id="name"
-                  className="bg-secondary border-golden/50 focus-visible:ring-golden"
-                  placeholder="Seu nome"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                <Input 
-                  id="email"
-                  type="email"
-                  className="bg-secondary border-golden/50 focus-visible:ring-golden"
-                  placeholder="seu.email@exemplo.com"
-                />
-              </div>
-            </div>
-            
-            <div className="mb-4">
-              <label htmlFor="subject" className="block text-sm font-medium mb-2">Assunto</label>
-              <Input 
-                id="subject"
-                className="bg-secondary border-golden/50 focus-visible:ring-golden"
-                placeholder="Assunto da mensagem"
-              />
-            </div>
-            
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium mb-2">Mensagem</label>
-              <Textarea 
-                id="message"
-                className="min-h-32 bg-secondary border-golden/50 focus-visible:ring-golden"
-                placeholder="Sua mensagem aqui..."
-              />
-            </div>
-            
-            <div>
-              <Button className="w-full bg-golden hover:bg-golden/90 text-black">
-                Enviar mensagem
+          <div className="flex items-center justify-center">
+            <a 
+              href="https://wa.me/5511999999999" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full max-w-md"
+            >
+              <Button className="w-full py-8 text-lg bg-golden hover:bg-golden/90 text-black golden-glow transition-all flex items-center justify-center gap-3">
+                <PhoneCall className="w-6 h-6" />
+                <span>Fale comigo pelo WhatsApp</span>
               </Button>
-            </div>
-          </form>
+            </a>
+          </div>
         </div>
       </div>
     </section>
