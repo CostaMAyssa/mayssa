@@ -1,7 +1,8 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
+import MinhaHistoria from '@/components/MinhaHistoria';
 import Start30 from '@/components/Start30';
 import Projects from '@/components/Projects';
 import YouTube from '@/components/YouTube';
@@ -13,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-matte text-whitePure">
       <Hero />
-      <About />
+      <MinhaHistoria />
       <Start30 />
       <Projects />
       <YouTube />
