@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 
+// Importando a imagem de fundo para usar em todos os capítulos
+import fundoImage from '../assets/fundo/fundo.png';
+
 interface TimelineChapter {
   id: number;
   title: string;
@@ -22,43 +25,43 @@ const chapters: TimelineChapter[] = [
     id: 1,
     title: "Onde tudo começou",
     content: "Nasci no interior de Goiás, em um ambiente simples, mas cheio de afeto e incentivo. Desde criança, já demonstrava curiosidade por aprender, desmontar coisas e imaginar como o mundo funcionava. A tecnologia ainda era distante, mas a vontade de transformar e criar já estava viva em mim. A infância me ensinou a olhar com atenção para as pessoas e para os problemas ao redor — uma habilidade que mais tarde viraria uma das maiores forças da minha jornada.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 2,
     title: "Empreendendo com minha mãe — Trenzinho Joy",
     content: "Antes mesmo de entender o que era \"empreendedorismo\", eu já vivia ele na prática. Junto com minha mãe, fundamos a Escola Trenzinho Joy, um espaço criado com carinho para acolher, educar e transformar a infância de outras crianças — assim como a minha havia sido. Essa experiência me deu algo raro: visão de negócio, senso de responsabilidade e a certeza de que empreender é, antes de tudo, um ato de coragem.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 3,
     title: "Decisão, mudança e crescimento — Rumo a Goiânia",
     content: "Sentia que precisava ir além. Tomei uma das decisões mais importantes da minha vida: sair da minha cidade e ir para Goiânia. O objetivo? Aprender, crescer e me cercar de oportunidades que me desafiassem de verdade. Foi nessa nova fase que aprofundei meus estudos em tecnologia, entrei em contato com o mundo dos apps, das automações e da inteligência artificial — e descobri onde realmente queria deixar minha marca.",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 4,
     title: "Primeiro código, primeira paixão",
     content: "Quando criei meu primeiro aplicativo, tudo fez sentido. Aquela mistura de lógica e criatividade me conquistou por completo. Descobri que podia resolver problemas reais com algumas linhas de código — e isso me fascinou. A tecnologia, ali, deixou de ser uma ferramenta e passou a ser uma extensão da minha visão de mundo.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 5,
     title: "Hackathons e superação",
     content: "Me joguei nos hackathons. Foram experiências intensas, onde aprendi a resolver problemas em equipe, sob pressão e com prazos apertados. Nesses eventos, ganhei prêmios, amizades e, principalmente, confiança. Percebi que podia liderar, criar com velocidade e me destacar mesmo entre os melhores.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 6,
     title: "A virada empreendedora",
     content: "Depois de tantas experiências técnicas, entendi que só código não bastava. Eu queria empreender, criar soluções com propósito e impacto real. Passei a estudar negócios, inovação e design estratégico. Queria unir o melhor dos dois mundos: visão de produto + mão na massa em tecnologia.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80"
+    image: fundoImage
   },
   {
     id: 7,
     title: "A criação da Start30",
     content: "E então nasceu a Start30 — uma empresa construída para transformar ideias em MVPs reais, usando IA, mobile e automações para acelerar projetos e negócios. Hoje, lidero uma equipe apaixonada por inovação, e juntos criamos soluções que resolvem problemas de verdade. Mas essa história... ainda está só começando.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80"
+    image: fundoImage
   }
 ];
 
