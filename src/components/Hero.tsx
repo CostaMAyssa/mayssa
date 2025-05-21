@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Linkedin, Youtube, Tiktok, WhatsApp } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -62,17 +62,17 @@ const Hero = () => {
           <a 
             href="#" 
             className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
-            aria-label="Twitter"
+            aria-label="TikTok"
           >
-            <Twitter className="w-6 h-6 text-golden" />
+            <Tiktok className="w-6 h-6 text-golden" />
           </a>
           
           <a 
             href="#" 
             className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
-            aria-label="Facebook"
+            aria-label="WhatsApp"
           >
-            <Facebook className="w-6 h-6 text-golden" />
+            <WhatsApp className="w-6 h-6 text-golden" />
           </a>
         </div>
       </div>
