@@ -8,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { motion } from "framer-motion";
 
 // Importando a imagem de fundo para usar em todos os capítulos
 import fundoImage from '../assets/fundo/fundo.png';
