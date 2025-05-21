@@ -1,6 +1,7 @@
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 import { 
   Carousel,
   CarouselContent,
@@ -8,9 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
 
 interface TimelineChapter {
   id: number;
@@ -65,67 +64,110 @@ const chapters: TimelineChapter[] = [
 ];
 
 const MinhaHistoria = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % chapters.length);
+  };
+  
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + chapters.length) % chapters.length);
+  };
+
   return (
-    <section id="minha-historia" className="py-20 bg-matte">
+    <section id="minha-historia" className="py-20 bg-matte overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-12 text-golden relative inline-block">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-16 text-golden relative inline-block">
           Minha História
           <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-golden"></span>
         </h2>
         
         <div className="mt-8">
-          <Carousel
+          <Carousel 
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full"
+            setApi={(api) => {
+              api?.on("select", () => {
+                const selectedIndex = api.selectedScrollSnap();
+                setActiveIndex(selectedIndex);
+              });
+            }}
+            defaultIndex={activeIndex}
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent>
               {chapters.map((chapter) => (
-                <CarouselItem key={chapter.id} className="pl-2 md:pl-4 sm:basis-4/5 md:basis-3/4 lg:basis-1/2">
-                  <Card className="border border-golden/30 bg-black rounded-2xl overflow-hidden shadow-md hover:shadow-golden/30 transition-all duration-300">
-                    <div className="h-48 overflow-hidden">
+                <CarouselItem key={chapter.id} className="w-full">
+                  <div className="bg-black/70 rounded-2xl overflow-hidden shadow-xl relative min-h-[500px] border border-golden/20 hover:border-golden/50 transition-all duration-300">
+                    <div className="absolute inset-0 z-0">
                       <img 
                         src={chapter.image} 
                         alt={`Capítulo ${chapter.id}: ${chapter.title}`} 
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        className="w-full h-full object-cover opacity-40 transition-transform duration-700 hover:scale-105"
                       />
                     </div>
-                    <CardHeader className="pt-6 pb-2">
-                      <div className="flex items-center mb-2">
-                        <div className="bg-golden text-black font-bold rounded-full h-8 w-8 flex items-center justify-center mr-3">
-                          {chapter.id}
+                    
+                    <div className="relative z-10 p-8 sm:p-12 flex flex-col justify-between h-full min-h-[500px]">
+                      <div>
+                        <div className="flex items-center mb-6">
+                          <div className="bg-yellow-400 text-black font-bold rounded-full h-10 w-10 flex items-center justify-center mr-4 shadow-md shadow-yellow-400/20">
+                            {chapter.id}
+                          </div>
+                          <h3 className="text-2xl font-bold text-yellow-400">{chapter.title}</h3>
                         </div>
-                        <CardTitle className="text-golden text-xl">{chapter.title}</CardTitle>
+                        
+                        <div className="mt-6">
+                          <p className="text-base text-gray-100 leading-relaxed max-w-2xl mx-auto">
+                            {chapter.content}
+                          </p>
+                        </div>
                       </div>
-                    </CardHeader>
-                    <CardContent className="px-6">
-                      <ScrollArea className="h-32">
-                        <p className="text-f5f5f5 leading-relaxed text-sm md:text-base">
-                          {chapter.content}
-                        </p>
-                      </ScrollArea>
-                    </CardContent>
-                    <CardFooter className="flex justify-between pt-4 pb-6 px-6">
-                      <span className="text-golden/70 text-sm">Capítulo {chapter.id} de {chapters.length}</span>
-                      <Button variant="ghost" size="sm" className="text-golden hover:text-golden/80 p-0">
-                        Próximo <ArrowRight className="ml-1 h-4 w-4" />
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                      
+                      <div className="flex justify-between items-center mt-8 pt-6 border-t border-golden/20">
+                        <span className="text-golden/70 text-sm">
+                          Capítulo {chapter.id} de {chapters.length}
+                        </span>
+                        <div className="flex gap-4">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="text-golden hover:text-golden/80 hover:bg-golden/10"
+                            onClick={handlePrev}
+                          >
+                            <ArrowLeft className="h-4 w-4 mr-2" /> Anterior
+                          </Button>
+                          <Button 
+                            variant="ghost"
+                            size="sm" 
+                            className="text-golden hover:text-golden/80 hover:bg-golden/10"
+                            onClick={handleNext}
+                          >
+                            Próximo <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             <div className="hidden md:block">
-              <CarouselPrevious className="border-golden text-golden hover:bg-golden/10 hover:text-white" />
-              <CarouselNext className="border-golden text-golden hover:bg-golden/10 hover:text-white" />
+              <CarouselPrevious 
+                onClick={handlePrev}
+                className="border-golden text-golden hover:bg-golden/10 hover:text-white -left-16"
+              />
+              <CarouselNext 
+                onClick={handleNext}
+                className="border-golden text-golden hover:bg-golden/10 hover:text-white -right-16"
+              />
             </div>
           </Carousel>
         </div>
         
-        <div className="mt-12 text-center">
-          <p className="text-grayText mb-6">Gostou da minha jornada?</p>
+        <div className="mt-16 text-center">
+          <p className="text-grayText mb-8">Gostou da minha jornada?</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="bg-golden hover:bg-golden/90 text-black font-medium">
               Fale comigo
