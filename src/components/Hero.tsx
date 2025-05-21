@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -34,13 +34,46 @@ const Hero = () => {
           </a>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-4">
-          <Button className="bg-golden hover:bg-golden/90 text-black px-6 py-6 h-auto rounded-full">
-            Sou empreendedora
-          </Button>
-          <Button variant="outline" className="border-whitePure text-whitePure hover:bg-white/10 px-6 py-6 h-auto rounded-full">
-            Sou desenvolvedora
-          </Button>
+        <div className="flex flex-wrap justify-center gap-6">
+          <a 
+            href="#" 
+            className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-6 h-6 text-golden" />
+          </a>
+          
+          <a 
+            href="#" 
+            className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-6 h-6 text-golden" />
+          </a>
+          
+          <a 
+            href="#" 
+            className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
+            aria-label="YouTube"
+          >
+            <Youtube className="w-6 h-6 text-golden" />
+          </a>
+          
+          <a 
+            href="#" 
+            className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-6 h-6 text-golden" />
+          </a>
+          
+          <a 
+            href="#" 
+            className="w-12 h-12 rounded-full border border-golden flex items-center justify-center hover:bg-golden/20 transition-colors golden-glow"
+            aria-label="Facebook"
+          >
+            <Facebook className="w-6 h-6 text-golden" />
+          </a>
         </div>
       </div>
     </section>
