@@ -8,15 +8,15 @@ const Projects = () => {
     {
       id: 1,
       title: "GranoZap",
-      description: "Domine suas finanças de forma simples, rápida e inteligente",
-      tags: ["Node.js", "React", "WhatsApp"],
+      description: "Domine suas finanças com uma simples mensagens pelo WhatsApp",
+      tags: ["Node.js", "Dashbord", "WhatsApp"],
       image: granoZapImage,
       url: "https://grananozap.com.br/"
     },
     {
       id: 2,
       title: "ZapFlow",
-      description: "Automatize seu WhatsApp e escalone seu negócio",
+      description: "Automatize todo seu WhatsApp e escalone seu negócio",
       tags: ["WhatsApp", "Automação", "Marketing"],
       image: zapFlowImage,
       url: "https://costamayssa.github.io/zapflow-landing-page/"

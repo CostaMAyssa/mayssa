@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { 
@@ -6,7 +6,8 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
+  type CarouselApi
 } from "@/components/ui/carousel";
 
 // Importando a imagem de fundo para usar em todos os capítulos
@@ -66,14 +67,23 @@ const chapters: TimelineChapter[] = [
 
 const MinhaHistoria = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
   
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % chapters.length);
+    api?.scrollNext();
   };
   
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + chapters.length) % chapters.length);
+    api?.scrollPrev();
   };
+
+  React.useEffect(() => {
+    if (!api) return;
+    
+    api.on("select", () => {
+      setActiveIndex(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <section id="minha-historia" className="py-20 bg-matte overflow-hidden">
@@ -90,13 +100,7 @@ const MinhaHistoria = () => {
               loop: true,
             }}
             className="w-full"
-            setApi={(api) => {
-              api?.on("select", () => {
-                const selectedIndex = api.selectedScrollSnap();
-                setActiveIndex(selectedIndex);
-              });
-            }}
-            defaultIndex={activeIndex}
+            setApi={setApi}
           >
             <CarouselContent>
               {chapters.map((chapter) => (
@@ -110,7 +114,7 @@ const MinhaHistoria = () => {
                       />
                     </div>
                     
-                    <div className="relative z-10 p-8 sm:p-12 flex flex-col justify-between h-full min-h-[500px]">
+                    <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-between h-full min-h-[500px]">
                       <div>
                         <div className="flex items-center mb-6">
                           <div className="bg-yellow-400 text-black font-bold rounded-full h-10 w-10 flex items-center justify-center mr-4 shadow-md shadow-yellow-400/20">
@@ -120,7 +124,7 @@ const MinhaHistoria = () => {
                         </div>
                         
                         <div className="mt-6">
-                          <p className="text-base text-gray-100 leading-relaxed max-w-2xl mx-auto">
+                          <p className="text-gray-100 leading-relaxed max-w-full font-caveat text-2xl tracking-wide">
                             {chapter.content}
                           </p>
                         </div>
@@ -179,9 +183,15 @@ const MinhaHistoria = () => {
                 Fale comigo
               </Button>
             </a>
+            <a 
+              href="https://wa.me/5564811406760" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
             <Button variant="outline" className="border-golden text-golden hover:bg-golden/10">
               Ver projetos
             </Button>
+            </a>
           </div>
         </div>
       </div>
