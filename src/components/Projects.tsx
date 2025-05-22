@@ -67,12 +67,12 @@ const Projects = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="https://github.com/costamayssa" 
-            className="inline-block px-6 py-3 border border-golden rounded-full hover:bg-golden hover:text-black transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+           <a 
+              href="https://wa.me/5564811406760" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 border border-golden rounded-full hover:bg-golden hover:text-black transition-colors"
+            >
             Ver todos os projetos
           </a>
         </div>

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 
 // Importando a imagem de fundo para usar em todos os capítulos
-import fundoImage from '../assets/fundo/fundo.png';
+import fundoImage from '@/assets/fundo/fundo.png';
 
 interface TimelineChapter {
   id: number;

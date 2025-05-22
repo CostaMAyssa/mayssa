@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 // Importando as imagens locais
-import momentos1 from '../assets/momentos_e_eventos/momentos1.jpeg';
-import momentos2 from '../assets/momentos_e_eventos/momentos2.jpeg';
-import momentos3 from '../assets/momentos_e_eventos/momentos3.jpeg';
-import momentos4 from '../assets/momentos_e_eventos/momentos4.jpeg';
-import momentos5 from '../assets/momentos_e_eventos/momentos5.jpeg';
-import momentos6 from '../assets/momentos_e_eventos/momentos6.jpeg';
+import momentos1 from '@/assets/momentos_e_eventos/momentos1.jpeg';
+import momentos2 from '@/assets/momentos_e_eventos/momentos2.jpeg';
+import momentos3 from '@/assets/momentos_e_eventos/momentos3.jpeg';
+import momentos4 from '@/assets/momentos_e_eventos/momentos4.jpeg';
+import momentos5 from '@/assets/momentos_e_eventos/momentos5.jpeg';
+import momentos6 from '@/assets/momentos_e_eventos/momentos6.jpeg';
 
 const Events = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);

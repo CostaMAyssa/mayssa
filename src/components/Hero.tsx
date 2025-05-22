@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '@/assets/fotohero.jpeg';
 
 const Hero = () => {
   return (
@@ -6,7 +7,7 @@ const Hero = () => {
       <div className="container flex flex-col items-center">
         <div className="hero-circle w-72 h-72 mb-8">
           <img 
-            src="/assets/fotohero.jpeg" 
+            src={heroImage} 
             alt="Mayssa Ferreira Costa" 
             className="w-full h-full object-cover"
           />
