@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import granoZapImage from '@/assets/sistemas/Captura de Tela 2025-05-21 às 17.22.43.png';
+import zapFlowImage from '@/assets/sistemas/zapflow.png';
 
 const Projects = () => {
   const projects = [
@@ -11,6 +12,14 @@ const Projects = () => {
       tags: ["Node.js", "React", "WhatsApp"],
       image: granoZapImage,
       url: "https://grananozap.com.br/"
+    },
+    {
+      id: 2,
+      title: "ZapFlow",
+      description: "Automatize seu WhatsApp e escalone seu negócio",
+      tags: ["WhatsApp", "Automação", "Marketing"],
+      image: zapFlowImage,
+      url: "https://costamayssa.github.io/zapflow-landing-page/"
     }
   ];
 
@@ -19,7 +28,7 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projetos em Destaque</h2>
         
-        <div className="grid grid-cols-1 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project) => (
             <a 
               key={project.id} 
@@ -59,7 +68,7 @@ const Projects = () => {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://grananozap.com.br/" 
+            href="https://github.com/costamayssa" 
             className="inline-block px-6 py-3 border border-golden rounded-full hover:bg-golden hover:text-black transition-colors"
             target="_blank"
             rel="noopener noreferrer"
