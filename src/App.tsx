@@ -17,6 +17,7 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        {/* Corrigido para funcionar no GitHub Pages com o caminho base /mayssa/ */}
         <BrowserRouter basename="/mayssa">
           <Routes>
             <Route path="/" element={<Index />} />
