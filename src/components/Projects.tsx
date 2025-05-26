@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import granoZapImage from '@/assets/sistemas/Captura de Tela 2025-05-21 às 17.22.43.png';
 import zapFlowImage from '@/assets/sistemas/zapflow.png';
+import packN8NImage from '@/assets/sistemas/packn8n.png';
+import auraImage from '@/assets/sistemas/aura.png';
 
 const Projects = () => {
   const projects = [
@@ -9,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "GranoZap",
       description: "Domine suas finanças com uma simples mensagens pelo WhatsApp",
-      tags: ["Node.js", "Dashbord", "WhatsApp"],
+      tags: ["Node.js", "Dashboard", "WhatsApp"],
       image: granoZapImage,
       url: "https://grananozap.com.br/"
     },
@@ -20,6 +22,22 @@ const Projects = () => {
       tags: ["WhatsApp", "Automação", "Marketing"],
       image: zapFlowImage,
       url: "https://costamayssa.github.io/zapflow-landing-page/"
+    },
+    {
+      id: 3,
+      title: "PackN8N",
+      description: "Modelos de fluxo prontos para automação com N8N",
+      tags: ["Automação", "N8N", "Fluxos"],
+      image: packN8NImage,
+      url: "https://wa.me/5564811406760"
+    },
+    {
+      id: 4,
+      title: "AURA",
+      description: "Sistema inteligente de agendamento para clínicas modernas",
+      tags: ["IA", "Agendamento", "Clínicas"],
+      image: auraImage,
+      url: "https://wa.me/5564811406760"
     }
   ];
 
@@ -28,7 +46,7 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projetos em Destaque</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {projects.map((project) => (
             <a 
               key={project.id} 
