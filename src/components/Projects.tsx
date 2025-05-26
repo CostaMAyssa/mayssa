@@ -29,7 +29,7 @@ const Projects = () => {
       description: "Modelos de fluxo prontos para automação com N8N",
       tags: ["Automação", "N8N", "Fluxos"],
       image: packN8NImage,
-      url: "https://wa.me/5564811406760"
+      url: "https://packn8n.com.br/"
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const Projects = () => {
       description: "Sistema inteligente de agendamento para clínicas modernas",
       tags: ["IA", "Agendamento", "Clínicas"],
       image: auraImage,
-      url: "https://wa.me/5564811406760"
+      url: "https://costamayssa.github.io/aura-clinic-bliss/#/"
     }
   ];
 
